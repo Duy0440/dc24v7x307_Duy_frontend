@@ -1,11 +1,3 @@
-<script>
-export default {
-  props: {
-    contact: { type: Object, required: true },
-  },
-};
-</script>
-
 <template>
   <div>
     <div class="p-1">
@@ -24,6 +16,18 @@ export default {
       <strong>Điện thoại:</strong>
       {{ contact.phone }}
     </div>
+
+    <div class="p-1" v-if="contact.hobbies && contact.hobbies.length">
+      <strong>Sở thích:</strong>
+      {{ contact.hobbies.join(', ') }}
+    </div>
+
+  
+    <div class="p-1" v-if="contact.maritalStatus">
+      <strong>Tình trạng hôn nhân:</strong>
+      {{ contact.maritalStatus }}
+    </div>
+
     <div class="p-1">
       <strong>Liên hệ yêu thích:&nbsp;</strong>
       <i v-if="contact.favorite" class="fas fa-check"></i>
@@ -31,3 +35,11 @@ export default {
     </div>
   </div>
 </template>
+
+<script>
+export default {
+  props: {
+    contact: { type: Object, required: true },
+  },
+};
+</script>

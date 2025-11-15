@@ -1,16 +1,15 @@
-import "./assets/main.css";
+// 🔹 Import Vue
 import { createApp } from "vue";
 import App from "./App.vue";
-import router from "./router"; // 🔹 thêm dòng này
 
+// 🔹 Import router
+import router from "./router";
+
+// 🔹 Import Bootstrap và Font Awesome
 import "bootstrap/dist/css/bootstrap.min.css";
-import "bootstrap/dist/js/bootstrap.bundle.min.js";
 import "@fortawesome/fontawesome-free/css/all.min.css";
 
-// 🔹 Đoạn trong hình hướng dẫn:
-createApp(App).use(router).mount("#app");
 
-// 🔹 Nếu bạn muốn theo cách tách biến app (vẫn đúng):
-// const app = createApp(App);
-// app.use(router);
-// app.mount("#app");
+
+
+createApp(App).use(router).mount("#app");
